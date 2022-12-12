@@ -77,5 +77,5 @@ model = DDPG(policy="MultiInputPolicy", env=env, replay_buffer_class=HerReplayBu
              learning_rate = 1e-3, action_noise = noise, policy_kwargs = policy_kwargs)
 callback = SaveOnBestTrainingRewardCallback(check_freq=1000, log_dir=log_dir)
 model.learn(1e6,callback=callback)
-plot_results([log_dir], timesteps, results_plotter.X_TIMESTEPS, "DDPG RobotReach")
+plot_results([log_dir], 1e6, results_plotter.X_TIMESTEPS, "DDPG RobotReach")
 plt.show()
