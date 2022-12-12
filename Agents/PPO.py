@@ -72,5 +72,5 @@ model = PPO(policy="MultiInputPolicy", env=env, verbose=1,
              learning_rate = 1e-3, policy_kwargs = policy_kwargs)
 callback = SaveOnBestTrainingRewardCallback(check_freq=1000, log_dir=log_dir)
 model.learn(1e6,callback=callback)
-plot_results([log_dir], timesteps, results_plotter.X_TIMESTEPS, "PPO RobotReach")
+plot_results([log_dir], 1e6, results_plotter.X_TIMESTEPS, "PPO RobotReach")
 plt.show()
